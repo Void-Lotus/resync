@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Noctalia wrapper & compatibility script for Noctalia v5+ CLI
+
+if [ $# -eq 0 ]; then
+    exec /usr/bin/noctalia "$@"
+elif [ "$1" = "msg" ]; then
+    shift
+    # Handle legacy "ipc call <target> <action>" syntax
+    if [ "$1" = "ipc" ] && [ "$2" = "call" ]; then
+        shift 2
+    fi
+
+    case "$1" in
+        settings-toggle|settings) exec /usr/bin/noctalia msg settings-toggle ;;
+        panel-toggle) exec /usr/bin/noctalia msg panel-toggle "$2" "$3" ;;
+        launcher) exec /usr/bin/noctalia msg panel-toggle launcher ;;
+        controlCenter) exec /usr/bin/noctalia msg panel-toggle control-center ;;
+        sessionMenu|session-menu) exec /usr/bin/noctalia msg panel-toggle session ;;
+        lockScreen|lock) exec /usr/bin/noctalia msg session lock ;;
+        volume-up) exec /usr/bin/noctalia msg volume-up ;;
+        volume-down) exec /usr/bin/noctalia msg volume-down ;;
+        volume-mute) exec /usr/bin/noctalia msg volume-mute ;;
+        mic-mute) exec /usr/bin/noctalia msg mic-mute ;;
+        media)
+            case "$2" in
+                next) exec /usr/bin/noctalia msg media next ;;
+                previous) exec /usr/bin/noctalia msg media previous ;;
+                toggle|playPause) exec /usr/bin/noctalia msg media toggle ;;
+                *) exec /usr/bin/noctalia msg media toggle ;;
+            esac
+            ;;
+        brightness-up) exec /usr/bin/noctalia msg brightness-up ;;
+        brightness-down) exec /usr/bin/noctalia msg brightness-down ;;
+        *) exec /usr/bin/noctalia msg "$@" ;;
+    esac
+else
+    exec /usr/bin/noctalia "$@"
+fi

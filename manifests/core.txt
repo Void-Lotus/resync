@@ -1,0 +1,16 @@
+# Essential System Core & Build Tools
+base-devel
+git
+wget
+curl
+pipewire
+wireplumber
+pipewire-alsa
+pipewire-pulse
+networkmanager
+bluez
+bluez-utils
+pamixer
+pavucontrol
+brightnessctl
+whiptail

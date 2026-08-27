@@ -1,0 +1,66 @@
+================================================================================
+                          ⌨️  HOTKEYS CONFIGS CHEATSHEET ⌨️
+================================================================================
+
+⭐ USER HOTKEYS
+--------------------------------------------------------------------------------
+  Mod + Return                Open Terminal (Alacritty)
+  Mod + Shift + Return        Open File Manager (Thunar)
+  Mod + H                     Open Hotkeys Cheatsheet (This window)
+  Mod + B                     Open Firefox Browser
+  Mod + W                     Open Zen Browser
+  Mod + Shift + W             Open Google Chrome
+  Mod + D                     Open App Launcher (Noctalia)
+  Mod + S                     Open Settings Panel
+  Mod + Shift + S             Open Control Center
+  Mod + N                     Open Notifications Panel
+  Mod + V                     Open Clipboard Manager
+  Mod + C                     Open Antigravity CLI (agy)
+  Mod + Shift + J             Open Joplin Notes
+  Mod + Alt + L               Lock Screen
+  Mod + Shift + Q             Open Session/Power Menu
+
+
+🪟 WINDOW MANIPULATION
+--------------------------------------------------------------------------------
+  Mod + Q                     Close Active Window
+  Mod + L / K / J             Focus Right / Up / Down
+  Mod + Arrow Keys            Focus Left / Right / Up / Down
+  Mod + Ctrl + H / L / K / J  Move Window Left / Right / Up / Down
+  Mod + Ctrl + Arrow Keys     Move Window Left / Right / Up / Down
+  Mod + T                     Toggle Window Floating
+  Mod + F                     Maximize Column
+  Mod + Shift + F             Toggle Fullscreen Window
+  Mod + M                     Maximize Window to Edges
+  Mod + Space                 Maximize Column
+  Mod + Shift + Space         Center Column
+  Mod + [ / ]                 Consume or Expel Window
+  Mod + , / .                 Consume into / Expel from Column
+  Mod + R                     Switch Preset Column Width
+  Mod + - / =                 Resize Column Width (-10% / +10%)
+  Mod + Shift + - / =         Resize Window Height (-10% / +10%)
+
+
+📁 WORKSPACE MANAGEMENT
+--------------------------------------------------------------------------------
+  Mod + 1..9                  Focus Workspace 1..9
+  Mod + Shift + 1..9          Move Column to Workspace 1..9
+  Mod + Wheel Scroll          Focus Workspace Down / Up
+  Mod + Ctrl + Wheel          Move Column to Workspace Down / Up
+  Mod + Tab                   Focus Previous Workspace
+  Mod + O                     Toggle Overview
+
+
+🎵 MEDIA & SYSTEM CONTROLS
+--------------------------------------------------------------------------------
+  Volume Up / Down / Mute     Volume Controls
+  Brightness Up / Down        Brightness Controls
+  Ctrl + Shift + 1 / 2 / 3    Screenshot (Area / Screen / Window)
+  Mod + Shift + Escape        Show Niri Hotkey Overlay
+  Mod + Escape                Toggle Shortcut Inhibition (Emergency)
+  Ctrl + Alt + Delete         Quit Niri (Exit Session)
+  Mod + Shift + P             Power Off Monitors
+
+================================================================================
+          [ Press Ctrl+Q or type ':q' to exit micro and close this window ]
+================================================================================

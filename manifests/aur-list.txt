@@ -1,0 +1,16 @@
+python-materialyoucolor
+simple-sddm-theme-2-git
+app2unit
+gtk-engine-murrine
+libcava
+qtilitools
+ttf-rubik-vf
+ttf-victor-mono
+hyprswitch
+sddm-conf-git
+wallust
+noctalia-git
+google-chrome
+spicetify-cli
+bibata-cursor-theme
+

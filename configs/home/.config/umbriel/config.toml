@@ -1,0 +1,13 @@
+# Umbriel modular config
+
+[include]
+files = [
+  "src/general.toml",
+  "src/appearance.toml",
+  "src/input.toml",
+  "src/keybinds.toml",
+  "src/rules.toml",
+  "src/workspaces.toml",
+  "machines/monolith.toml",
+  "noctalia.toml",
+]

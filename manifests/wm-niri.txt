@@ -1,0 +1,10 @@
+# Niri Scrollable Tiling Compositor
+niri-git
+waybar
+rofi
+swaync
+swappy
+slurp
+grim
+xwayland-satellite
+fuzzel

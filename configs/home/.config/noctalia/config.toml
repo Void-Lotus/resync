@@ -1,0 +1,3 @@
+[hooks]
+colors_changed = [ "/home/voidlotus/.config/noctalia/wallpaper_change.sh" ]
+wallpaper_changed = [ "/home/voidlotus/.config/noctalia/wallpaper_change.sh" ]

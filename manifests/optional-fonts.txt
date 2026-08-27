@@ -1,0 +1,10 @@
+# Fonts & Mouse Cursor Themes
+ttf-jetbrains-mono-nerd
+ttf-fira-code
+noto-fonts
+noto-fonts-emoji
+noto-fonts-cjk
+otf-font-awesome
+bibata-cursor-theme
+ttf-rubik-vf
+ttf-victor-mono

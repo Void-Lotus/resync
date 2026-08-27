@@ -1,0 +1,13 @@
+# Umbriel Wayland Compositor & Shell
+alacritty
+waybar
+mako
+rofi
+noctalia-git
+wallust
+swaync
+swappy
+slurp
+grim
+xwayland-satellite
+polkit-kde-agent

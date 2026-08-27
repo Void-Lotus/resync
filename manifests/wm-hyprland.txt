@@ -1,0 +1,12 @@
+# Hyprland Ecosystem
+hyprland
+hyprlock
+hypridle
+hyprpolkitagent
+waybar
+rofi
+swaync
+swappy
+slurp
+grim
+xdg-desktop-portal-hyprland

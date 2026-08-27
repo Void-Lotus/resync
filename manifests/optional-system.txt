@@ -1,0 +1,18 @@
+# System Utilities & Maintenance
+btrfs-progs
+btrfs-assistant
+snapper
+cryptsetup
+limine
+ufw
+smartmontools
+file-roller
+thunar
+thunar-archive-plugin
+thunar-volman
+xarchiver
+cups
+cups-pdf
+hplip
+system-config-printer
+testdisk

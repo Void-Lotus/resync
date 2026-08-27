@@ -1,0 +1,4 @@
+# Web Browsers
+zen-browser-bin
+google-chrome
+firefox

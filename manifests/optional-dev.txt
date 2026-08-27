@@ -1,0 +1,7 @@
+# Development Tools & Compilers
+go
+python
+meld
+mercurial
+git
+bash-completion

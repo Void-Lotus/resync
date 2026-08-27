@@ -1,0 +1,5 @@
+# Office & Productivity
+libreoffice-fresh
+wps-office
+ttf-wps-fonts
+joplin-desktop

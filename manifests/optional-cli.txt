@@ -1,0 +1,23 @@
+# Command-Line Utilities & TUI Tools
+cava
+yt-dlp
+cliphist
+plocate
+cpupower
+hwinfo
+fastfetch
+btop
+glances
+nvtop
+ripgrep
+lsd
+duf
+micro
+vim
+nano
+github-cli
+bc
+pv
+less
+man-db
+man-pages

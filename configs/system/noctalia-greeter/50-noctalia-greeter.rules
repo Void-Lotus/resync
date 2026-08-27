@@ -1,0 +1,7 @@
+/* Allow wheel users to sync Noctalia appearance to greeter without password */
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.noctalia.greeter.apply-appearance" &&
+        subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
+    }
+});

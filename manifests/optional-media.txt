@@ -1,0 +1,13 @@
+# Media, Audio & Graphics Applications
+mpv
+mpv-mpris
+rhythmbox
+strawberry
+cava
+spicetify-cli
+krita
+qalculate-gtk
+loupe
+evince
+vlc-plugins-all
+playerctl

@@ -1,0 +1,60 @@
+# Noctalia Greeter Configuration
+# Location: /var/lib/noctalia-greeter/greeter.toml
+
+[session]
+default = "Umbriel"
+
+[appearance]
+font_family = "JetBrains Mono"
+corner_radius_scale = 1.0
+hide_logo = false
+password_style = "dots"
+
+    [appearance.wallpaper]
+    path = "/var/lib/noctalia-greeter/wallpaper.png"
+    fill_mode = "crop"
+
+    [appearance.palette]
+    surface = "#0f1511B3"
+    on_surface = "#dee4deFF"
+    surface_variant = "#404943B3"
+    on_surface_variant = "#c0c9c1FF"
+    surface_container = "#1b211dCC"
+    surface_container_high = "#262b27D9"
+    surface_container_highest = "#303632D9"
+    surface_container_low = "#171d19B3"
+    surface_container_lowest = "#0a0f0c99"
+    primary = "#8fd5b0FF"
+    on_primary = "#003824FF"
+    primary_container = "#005236CC"
+    on_primary_container = "#aaf2cbFF"
+    secondary = "#b4ccbcFF"
+    on_secondary = "#20352aFF"
+    secondary_container = "#364b3fCC"
+    on_secondary_container = "#d0e8d8FF"
+    tertiary = "#a4cddeFF"
+    on_tertiary = "#063543FF"
+    tertiary_container = "#234c5aCC"
+    on_tertiary_container = "#c0e9faFF"
+    error = "#ffb4abFF"
+    on_error = "#690005FF"
+    error_container = "#93000aCC"
+    on_error_container = "#ffdad6FF"
+    outline = "#8a938c80"
+    outline_variant = "#40494360"
+    shadow = "#00000080"
+    scrim = "#00000080"
+
+[cursor]
+theme = "Bibata-Modern-Ice"
+size = 24
+path = "/usr/share/icons"
+
+[keyboard]
+layout = "us"
+
+[idle]
+timeout = 300
+
+[output]
+name = "eDP-1"

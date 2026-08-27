@@ -1,0 +1,35 @@
+layout {
+
+    focus-ring {
+        active-color   "#89d6ae"
+        inactive-color "#000000"
+        urgent-color   "#ffb4ab"
+    }
+
+    border {
+        active-color   "#89d6ae"
+        inactive-color "#000000"
+        urgent-color   "#ffb4ab"
+    }
+
+    shadow {
+        color "#00000070"
+    }
+
+    tab-indicator {
+        active-color   "#89d6ae"
+        inactive-color "#539f7b"
+        urgent-color   "#ffb4ab"
+    }
+
+    insert-hint {
+        color "#89d6ae80"
+    }
+}
+
+recent-windows {
+    highlight {
+        active-color "#89d6ae"
+        urgent-color "#ffb4ab"
+    }
+}

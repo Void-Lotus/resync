@@ -1,0 +1,51 @@
+[workspaces]
+back_and_forth = false
+
+# Overview -------------------------------------------------------------------
+
+[overview]
+zoom = 0.5                     # 0.1-0.75
+# background_tint = "#10101430"
+# workspace_background = "#00000044" # set alpha to FF for an opaque background
+
+# Hot corners ---------------------------------------------------------------
+
+[hot_corners.top_left]
+enabled = true
+delay_ms = 500                # 0-10000, 0 activates immediately
+action = "overview-open"
+
+[hot_corners.top_right]
+enabled = false
+delay_ms = 500
+action = "overview-close"
+
+[hot_corners.bottom_left]
+enabled = false
+delay_ms = 500
+action = "overview-toggle"
+
+[hot_corners.bottom_right]
+enabled = false
+delay_ms = 500
+action = "spawn:notify-send 'Bottom right'"
+
+# Layout ---------------------------------------------------------------------
+
+[layout]
+mode = "scrolling"             # "scrolling" or "dwindle"
+gap = 8                        # 0-500
+width_presets = [0.333, 0.5, 0.667] # shared by scrolling and dwindle
+
+[layout.scrolling]
+# Vertical workspaces stack horizontal lanes from top to bottom.
+# direction = "horizontal"
+default_width_fraction = 0.5   # 0.1-1.0
+center_underfull_strip = true  # center the strip whenever it is narrower than the viewport
+
+# Workspace layout overrides (see docs/user/outputs.md#workspace-rules)
+# [[workspace]]
+# name = "chat"
+# layout.mode = "dwindle"
+# layout.gap = 4
+# layout.scrolling.center_underfull_strip = false

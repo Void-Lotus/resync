@@ -1,0 +1,11 @@
+[input]
+middle_click_paste = true
+
+    [input.keyboard]
+    layout = ''
+    repeat_delay = 600
+    repeat_rate = 25
+
+    [input.touchpad]
+    natural_scroll = true
+    tap = true

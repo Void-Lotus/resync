@@ -1,0 +1,5 @@
+[general]
+autostart = ["noctalia"]
+focus_on_activate = false
+show_cheatsheet = false
+xwayland = true

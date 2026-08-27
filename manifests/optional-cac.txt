@@ -1,0 +1,6 @@
+# DoD CAC / Smart Card Reader Support
+ccid
+opensc
+pcsc-perl
+pcsc-tools
+lib32-pcsclite
