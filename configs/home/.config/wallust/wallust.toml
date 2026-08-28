@@ -72,3 +72,9 @@ umbriel.target = '~/.config/umbriel/noctalia.toml'
 
 #zathura.template = 'colors-zathura'
 #zathura.target = '~/.config/zathura/zathurarc'
+
+mimic_logo.template = 'mimic-logo.txt'
+mimic_logo.target = '~/.config/fastfetch/mimic.txt'
+
+ai_overlay.template = 'colors-ai-overlay.css'
+ai_overlay.target = '~/.config/distro-ai/wallust.css'

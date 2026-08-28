@@ -1,0 +1,11 @@
+/* Wallust dynamic palette for MimicOS AI Overlay */
+@define-color bg_card rgba({{background | rgb}}, 0.88);
+@define-color border_card rgba({{foreground | rgb}}, 0.15);
+@define-color accent_primary {{color4}};
+@define-color accent_secondary {{color6}};
+@define-color accent_highlight {{color3}};
+@define-color user_bubble_bg rgba({{color4 | rgb}}, 0.22);
+@define-color user_bubble_border rgba({{color4 | rgb}}, 0.45);
+@define-color ai_bubble_bg rgba({{color0 | rgb}}, 0.45);
+@define-color text_main {{foreground}};
+@define-color text_muted {{color7}};

@@ -1,0 +1,9 @@
+\033[38;2;{{color6.r}};{{color6.g}};{{color6.b}}m          /\
+\033[38;2;{{color5.r}};{{color5.g}};{{color5.b}}m         /  \
+\033[38;2;{{color4.r}};{{color4.g}};{{color4.b}}m   /\   / \033[38;2;{{color6.r}};{{color6.g}};{{color6.b}}m/\033[38;2;{{color4.r}};{{color4.g}};{{color4.b}}m \   /\
+\033[38;2;{{color4.r}};{{color4.g}};{{color4.b}}m  /  \ / /  \ \ /  \
+\033[38;2;{{color3.r}};{{color3.g}};{{color3.b}}m / /\ \_/ /\ \_/ /\ \
+\033[38;2;{{color2.r}};{{color2.g}};{{color2.b}}m \ \ \   /  \   / / /
+\033[38;2;{{color2.r}};{{color2.g}};{{color2.b}}m  \ \ \_/ /\ \_/ / /
+\033[38;2;{{color1.r}};{{color1.g}};{{color1.b}}m   \ \___/  \___/ /
+\033[38;2;{{color1.r}};{{color1.g}};{{color1.b}}m    \/__________\/\033[0m
