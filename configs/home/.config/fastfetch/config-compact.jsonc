@@ -1,11 +1,14 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
- "logo": {
-  "type": "small",
-  "padding": {
-    "top": 1
-    }
-  },
+    "logo": {
+        "type": "file",
+        "source": "{{HOME}}/.config/fastfetch/mimic.txt",
+        "padding": {
+            "top": 1,
+            "left": 1,
+            "right": 2
+        }
+    },
     "display": {
         "separator": " -> "
     },
@@ -14,7 +17,7 @@
         {
             "type": "title",
             "keyWidth": 10,
-			"format": "         {6}{7}{8}"
+            "format": "      \u001b[1;33mMimicOS \u001b[0;37m|\u001b[0m {6}{7}{8}"
         },
         {
             "type": "custom",
@@ -40,18 +43,10 @@
             "key": " ",
             "keyColor": "blue"
         },
-        /*
-        {
-            "type": "packages",
-            "key": "󰏖 ",
-            "keyColor": "yellow"
-        },
-        */
         {
             "type": "memory",
             "key": "󰍛 ",
             "keyColor": "magenta",
-            // format: used / total
             "format": "{1} / {2}"
         },
         {
@@ -67,6 +62,6 @@
             "type": "custom",
             "format": "   \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[90m "
         },
-		"break",
+        "break"
     ]
 }
