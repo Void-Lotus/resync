@@ -54,7 +54,7 @@
 'Mod+Shift+Up' = 'workspace-previous'
 'Mod+Shift+W' = 'spawn:google-chrome-stable'
 'Mod+Shift+bracketleft' = 'spawn:/home/voidlotus/.config/hypr/scripts/ScreenShot.sh --area'
-'Mod+Space' = 'window-toggle-maximize'
+'Mod+Space' = 'spawn:/home/voidlotus/.local/bin/ai-overlay'
 'Mod+T' = 'spawn:/home/voidlotus/.config/umbriel/scripts/set-layout-dwindle.sh'
 'Mod+Tab' = 'scratchpad-focus-next'
 'Mod+Up' = 'window-focus-up'

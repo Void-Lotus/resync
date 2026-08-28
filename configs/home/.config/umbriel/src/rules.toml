@@ -1,5 +1,5 @@
 [[layer_rule]]
-match.namespace = '^noctalia-(notification|dock|panel|attached-panel|osd|desktop-widget-.*|launcher)$'
+match.namespace = '^noctalia-(notification|dock|panel|attached-panel|osd|desktop-widget-.*|launcher|ai-overlay)$'
 blur = true
 blur_ignore_alpha = 0.15
 blur_popups = true
