@@ -13,10 +13,12 @@ class DotfileEngine:
     Direct copy, templated dotfile synchronization engine.
     Completely eliminates GNU Stow and fragile symlinks.
     Supports atomic backups, variable templating, diffing, and bidirectional sync.
+    Retention policy: Keeps the last 3 backup snapshots automatically.
     """
-    def __init__(self, repo_dir: Optional[str] = None, target_home: Optional[str] = None):
+    def __init__(self, repo_dir: Optional[str] = None, target_home: Optional[str] = None, max_backups: int = 3):
         self.repo_dir = repo_dir or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         self.configs_dir = os.path.join(self.repo_dir, "configs", "home")
+        self.max_backups = max_backups
         
         # Real user target home
         if target_home:
@@ -92,7 +94,6 @@ class DotfileEngine:
             return managed
 
         for root, dirs, files in os.walk(self.configs_dir):
-            # Skip traversing into bulk dirs during fine-grained config inspection
             rel_root = os.path.relpath(root, self.configs_dir)
             if any(rel_root == b or rel_root.startswith(b + os.sep) for b in self.bulk_dirs):
                 continue
@@ -169,10 +170,23 @@ class DotfileEngine:
 
         return diff_results
 
+    def _prune_old_backups(self, keep: Optional[int] = None, log_cb: Optional[Callable[[str], None]] = None):
+        """Prune old backup snapshots, retaining only the most recent N (default: 3)."""
+        limit = keep if keep is not None else self.max_backups
+        backups = self.list_backups()
+        if len(backups) > limit:
+            to_remove = backups[limit:]
+            for b in to_remove:
+                old_dir = os.path.join(self.backups_dir, b)
+                shutil.rmtree(old_dir, ignore_errors=True)
+                if log_cb:
+                    log_cb(f"[*] Pruned old backup snapshot: {b}")
+
     def deploy(self, extra_vars: Optional[Dict[str, str]] = None, log_cb: Optional[Callable[[str], None]] = None) -> bool:
         """
         Deploy dotfiles, scripts, wallpapers, and themes directly into $HOME.
         - Backs up existing files to ~/.local/state/resync/backups/<timestamp>/
+        - Automatically prunes old backups to retain the last 3 snapshots
         - Removes any old Stow symlinks and replaces with real files
         - Interpolates variables dynamically
         """
@@ -213,6 +227,13 @@ class DotfileEngine:
             if os.access(abs_src, os.X_OK):
                 os.chmod(target_path, 0o755)
 
+        # Clean up empty backup directory if no files changed
+        if backup_count == 0 and os.path.exists(backup_gen_dir):
+            shutil.rmtree(backup_gen_dir, ignore_errors=True)
+        else:
+            # Prune old backups, keeping only the last 3
+            self._prune_old_backups(keep=self.max_backups, log_cb=log_cb)
+
         # 2. Deploy bulk assets (wallpapers, themes, icons)
         for bulk in self.bulk_dirs:
             src_bulk = os.path.join(self.configs_dir, bulk)
@@ -221,10 +242,8 @@ class DotfileEngine:
                 if log_cb:
                     log_cb(f"[*] Syncing assets: {bulk}...")
                 os.makedirs(os.path.dirname(dst_bulk), exist_ok=True)
-                # If target is symlink, remove it
                 if os.path.islink(dst_bulk):
                     os.unlink(dst_bulk)
-                # Copy tree without overwriting unmodified
                 shutil.copytree(src_bulk, dst_bulk, dirs_exist_ok=True)
 
         # 3. Fix ownership if running under sudo
@@ -240,7 +259,8 @@ class DotfileEngine:
                 pass
 
         if log_cb:
-            log_cb(f"[✓] Deployed configurations successfully ({backup_count} files backed up to {timestamp}).")
+            msg = f"[✓] Deployed configurations successfully ({backup_count} files backed up)." if backup_count > 0 else "[✓] Deployed configurations successfully (all configs were already identical)."
+            log_cb(msg)
         return True
 
     def collect(self, log_cb: Optional[Callable[[str], None]] = None) -> int:
@@ -270,7 +290,7 @@ class DotfileEngine:
         return updated_count
 
     def list_backups(self) -> List[str]:
-        """List available backup timestamps."""
+        """List available backup timestamps sorted newest first."""
         if not os.path.exists(self.backups_dir):
             return []
         return sorted([
@@ -306,7 +326,4 @@ class DotfileEngine:
 if __name__ == "__main__":
     engine = DotfileEngine()
     print("Config files tracked:", len(engine.list_config_files()))
-    diffs = engine.diff()
-    print(f"Diffs against current live system: {len(diffs)}")
-    for d in diffs[:5]:
-        print(f" - {d['path']}: {d['status']}")
+    print("Available backups (retention: last 3):", engine.list_backups())
